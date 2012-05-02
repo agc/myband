@@ -12,17 +12,49 @@
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
-		<g:layoutHead/>
-        <r:layoutResources />
+       <link rel="stylesheet" href="${resource(dir:'css/menu', file:'fg.menu.css')}" />
+
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'site.css')}" type="text/css">
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+
+    <g:layoutHead/>
+        <r:require modules="application,core,menu"/>
+        <r:layoutResources/>
+
+
 	</head>
-	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
-		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-		<g:javascript library="application"/>
-        <r:layoutResources />
-	</body>
+
+<body class="ui-widget-content">
+<div>
+    <div id="header" class="ui-widget-header">
+        <!-- Generally would include the header section -->
+    </div>
+
+    <!-- Include the menu definitions. -->
+    <g:render template="/layouts/includes/menu"/>
+
+    <!-- Theme Switcher Component will show here -->
+    <div id="switcher" style="margin-top: 5px;"></div>
+
+    <div id="bodyContent">
+        <div id="sidebar">
+            <!-- Include the accordion sidenav -->
+            <g:render template="/layouts/includes/leftnav" />
+        </div>
+
+        <div id="main">
+            <g:layoutBody/>
+        </div>
+    </div>
+
+    <!-- Footer that always shows at bottom of page -->
+    <div id="footer" class="ui-widget-header">
+        <div id="footerContent">
+            MyBand <g:meta name="app.version"/> on Grails <g:meta name="app.grails.version" />.
+        </div>
+    </div>
+</div>
+<r:layoutResources/>
+</body>
 </html>

@@ -1,0 +1,49 @@
+/* Layout Related Id Styles */
+#header {
+    min-height: 100px;
+    height: 100px;
+}
+
+#headerLogo {
+    text-align: center;
+    border: none;
+}
+
+#bodyContent {
+    min-height: 100%;
+}
+
+#sidebar {
+    float: left;
+    width: 20%;
+    min-width: 20%;
+    margin-top: 5px;
+}
+
+#main {
+    float: right;
+    width: 75%;
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#footer {
+    clear: both;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 30px;
+}
+
+#footerContent {
+    margin-top: 2px;
+    margin-right: 15px;
+    float: right;
+    font-size: .75em;
+}
+
+/* Layout related classes */
+.menu-item {
+    padding: 0px 24px 0px 24px;
+}

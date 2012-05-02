@@ -91,3 +91,16 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+grails.resources.modules = {
+    core {
+        dependsOn 'jquery-ui'
+    }
+    // Define reference to custom jQuery UI theme
+    // Lo he bajado de la página de jquery componiendo el tipo de letra
+    overrides {
+        'jquery-theme' {
+            resource id: 'theme', url: '/css/custom-theme/jquery-ui-1.8.19.custom.css'
+        }
+    }
+}

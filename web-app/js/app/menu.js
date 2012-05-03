@@ -49,9 +49,7 @@ $(document).ready(function() {
         maxHeight: 200
     });
 
-    $("#leftnav").accordion({
-        fillSpace: true
-    });
+
 
 });
 

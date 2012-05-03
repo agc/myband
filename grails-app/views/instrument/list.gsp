@@ -12,10 +12,11 @@
         var showUrl = "${createLink(action: 'show')}";
         var editUrl = "${createLink(action: 'edit')}";
         var createUrl = "${createLink(action: 'create')}";
+
     </script>
 
-    <g:javascript library="app/instrument/list" />
-    <r:layoutResources/>
+    <r:require modules="jqgrid,menu"/>
+
 
 </head>
 <body>

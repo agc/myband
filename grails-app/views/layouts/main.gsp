@@ -12,6 +12,7 @@
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
+        <link rel="stylesheet" href="${resource(dir:'css/grid', file:'ui.jqgrid.css')}" />
        <link rel="stylesheet" href="${resource(dir:'css/menu', file:'fg.menu.css')}" />
 
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
@@ -31,15 +32,15 @@
         <!-- Generally would include the header section -->
     </div>
 
-    <!-- Include the menu definitions. -->
+
     <g:render template="/layouts/includes/menu"/>
 
-    <!-- Theme Switcher Component will show here -->
+
     <div id="switcher" style="margin-top: 5px;"></div>
 
     <div id="bodyContent">
         <div id="sidebar">
-            <!-- Include the accordion sidenav -->
+            <!-- Incluir la barra de navegacion accordion  -->
             <g:render template="/layouts/includes/leftnav" />
         </div>
 
@@ -48,7 +49,7 @@
         </div>
     </div>
 
-    <!-- Footer that always shows at bottom of page -->
+
     <div id="footer" class="ui-widget-header">
         <div id="footerContent">
             MyBand <g:meta name="app.version"/> on Grails <g:meta name="app.grails.version" />.

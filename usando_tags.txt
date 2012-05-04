@@ -30,3 +30,12 @@ añade un tag anotado a ese commit
 por defecto los tags no se transmiten al servidor remoto. Para que se transmitan 
 
 git push --tags
+
+
+Los tags deben obtenerse expresamente
+
+
+git pull --tags  
+
+
+duda: aparece un mensaje de error diciendo que se debe invocar get fetch --tags)

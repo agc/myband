@@ -1,0 +1,32 @@
+Uso de tags en Git
+
+git tag
+
+
+lista los tags existentes
+
+
+git tag -a v1.4 -m 'version 1.4'
+
+crea un tag anotado
+
+git show v1.4
+
+
+muestra la información
+
+se puede etiquetar commits anteriores
+
+
+git log --pretty=oneline
+
+muestra información sobre los hash de los commits
+
+
+git tag -a v1.2 9fceb02
+
+añade un tag anotado a ese commit
+
+por defecto los tags no se transmiten al servidor remoto. Para que se transmitan 
+
+git push --tags

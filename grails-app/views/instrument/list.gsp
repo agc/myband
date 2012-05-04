@@ -15,7 +15,7 @@
 
     </script>
 
-    <r:require modules="jqgrid,menu"/>
+    <r:require modules="jqgridinstrument"/>
 
 
 </head>

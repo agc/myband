@@ -1,62 +1,48 @@
-
-<%@ page import="myband.Member" %>
-<!doctype html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'member.label', default: 'Member')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#list-member" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="list-member" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<table>
-				<thead>
-					<tr>
-					
-						<g:sortableColumn property="firstName" title="${message(code: 'member.firstName.label', default: 'First Name')}" />
-					
-						<g:sortableColumn property="lastName" title="${message(code: 'member.lastName.label', default: 'Last Name')}" />
-					
-						<g:sortableColumn property="phoneNumber" title="${message(code: 'member.phoneNumber.label', default: 'Phone Number')}" />
-					
-						<g:sortableColumn property="dateCreated" title="${message(code: 'member.dateCreated.label', default: 'Date Created')}" />
-					
-						<g:sortableColumn property="lastUpdated" title="${message(code: 'member.lastUpdated.label', default: 'Last Updated')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${memberInstanceList}" status="i" var="memberInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${memberInstance.id}">${fieldValue(bean: memberInstance, field: "firstName")}</g:link></td>
-					
-						<td>${fieldValue(bean: memberInstance, field: "lastName")}</td>
-					
-						<td>${fieldValue(bean: memberInstance, field: "phoneNumber")}</td>
-					
-						<td><g:formatDate date="${memberInstance.dateCreated}" /></td>
-					
-						<td><g:formatDate date="${memberInstance.lastUpdated}" /></td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<g:paginate total="${memberInstanceTotal}" />
-			</div>
-		</div>
-	</body>
+<head>
+    <meta name="layout" content="main" />
+
+    <g:set var="entityName" value="${message(code: 'member.label', default: 'Member')}" />
+
+    <script type="text/javascript">
+        // URL values used for list interaction
+        // Defined here so we don't inline all of the javascript
+        var listSourceUrl = "${createLink(action: 'listJSON')}";
+        var listEditUrl = "${createLink(action: 'editJSON')}";
+        var showUrl = "${createLink(action: 'show')}";
+        var editUrl = "${createLink(action: 'edit')}";
+        var createUrl = "${createLink(action: 'create')}";
+
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#message").hide();
+        });
+
+
+    </script>
+
+    <r:require modules="jqgridmember"/>
+
+
+</head>
+<body>
+<div class="body">
+    <g:if test="${flash.message}">
+        <div id="message" class="message ui-widget-header ui-corner-all">${flash.message}</div>
+    </g:if>
+
+    <div id="gridWrapper" class="ui-widget-header ui-corner-all" style="overflow: auto;">
+        <h3 class="ui-widget-header ui-corner-all" style="text-align: center;">${entityName}s</h3>
+        <!-- table tag will hold our grid -->
+        <table id="memberGrid" class="scroll jqTable" style="width: 100%;" cellpadding="0" cellspacing="0"></table>
+        <!-- pager will hold our paginator -->
+        <div id="memberGridPager" class="scroll" style="text-align:center;"></div>
+    </div>
+</div>
+
+<!-- the dialog div we will populate if nothing is selected for edit or delete -->
+<div id="noSelection" style="display: none;" />
+</body>
 </html>

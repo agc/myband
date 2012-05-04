@@ -1,0 +1,17 @@
+/* Tooltip
+----------------------------------*/
+.ui-tooltip {
+	font-size: 0.8em;
+	padding: 1px 2px;
+	position: absolute;
+	z-index: 9999;
+	-o-box-shadow: 0 0 2px #aaa;
+	-moz-box-shadow: 0 0 2px #aaa;
+	-webkit-box-shadow: 0 0 2px #aaa;
+	box-shadow: 0 0 2px #aaa;
+}
+/* Fades and background-images don't work well together in IE6, drop the image */
+* html .ui-tooltip {
+	background-image: none;
+}
+body .ui-tooltip { border-width:1px; }

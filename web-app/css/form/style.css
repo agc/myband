@@ -1,0 +1,28 @@
+/*Info and error boxes
+----------------------------------*/
+.info {
+	margin: 0 0 1em 0;
+	padding: 0 0 0 1em;
+}
+.ui-formular-error li {
+	font-size: 0.8em;
+}
+
+.ui-formular-error{
+	position: absolute;
+	left: 22em;
+	top: 5.3em;
+	width: 20em;
+}
+
+.ui-forumular-info {
+    padding: 0;
+}
+
+/* Chrome css bug (would change styles of other browsers too, only to see where the problem is */
+�/* 
+select.ui-state-error, 
+.ui-widget-content  select.ui-state-error {
+color: black;
+}
+ */

@@ -100,7 +100,9 @@ grails.resources.modules = {
     // Lo he bajado de la página de jquery componiendo el tipo de letra
     overrides {
         'jquery-theme' {
-            resource id: 'theme', url: '/css/custom-theme/jquery-ui-1.8.19.custom.css'
+           // resource id: 'theme', url: '/css/custom-theme/jquery-ui-1.8.19.custom.css'
+           // resource id: 'theme', url: '/css/redmond/jquery-ui-1.8.13.custom.css'
+            resource id: 'theme', url: '/css/smoothness/jquery-ui-1.8.13.custom.css'
         }
     }
 }

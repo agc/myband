@@ -22,7 +22,7 @@ modules = {
     jqgridinstrument {
         dependsOn :'core'
         resource url:'js/app/instrument/list.js'
-        resource url:'js/i18n/grid.locale-en.js'
+        resource url:'js/i18n/grid.locale-sp.js'
         resource url:'js/grid/jquery.jqGrid.min.js'
         resource url:'js/grid/jquery.jqGrid.fluid.js'
 
@@ -31,7 +31,7 @@ modules = {
     jqgridband{
         dependsOn :'core'
         resource url:'js/app/band/list.js'
-        resource url:'js/i18n/grid.locale-en.js'
+        resource url:'js/i18n/grid.locale-sp.js'
         resource url:'js/grid/jquery.jqGrid.min.js'
         resource url:'js/grid/jquery.jqGrid.fluid.js'
 
@@ -44,6 +44,15 @@ modules = {
         resource url:'js/grid/jquery.jqGrid.min.js'
         resource url:'js/grid/jquery.jqGrid.fluid.js'
 
+    }
+
+    multiselect {
+        dependsOn :'core'
+        resource url: 'js/multiselect/ui.multiselect.js'
+    }
+    multiselect_nuevo {
+        dependsOn :'core'
+        resource url: 'js/multiselect_nuevo/jquery.multiselect.min.js'
     }
 }
 
